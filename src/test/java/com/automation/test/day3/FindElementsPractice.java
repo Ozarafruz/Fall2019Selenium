@@ -13,7 +13,7 @@ public class FindElementsPractice {
 //        WebDriverManager.chromedriver().setup();
 //
 //        WebDriver driver = new ChromeDriver();
-        WebDriver driver = DriverFactory.createADriver("chrome");
+        WebDriver driver = DriverFactory.createDriver("chrome");
         driver.get("http://practice.cybertekschool.com/sign_up");
         WebElement fullName = driver.findElement(By.name("full_name"));
         fullName.sendKeys("Mister Twister");
@@ -31,7 +31,8 @@ public class FindElementsPractice {
         //It make sense to use when click() method doesn't work
         signUp.submit();
 
-        Thread.sleep(2000);
+
+            Thread.sleep(2000);
 
         String expected = "Thank you for signing up. Click the button below to return to the home page.";
         WebElement message = driver.findElement(By.className("subheader"));
