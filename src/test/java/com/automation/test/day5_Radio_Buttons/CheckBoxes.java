@@ -1,4 +1,4 @@
-package com.automation.test.day7_Radio_Buttons;
+package com.automation.test.day5_Radio_Buttons;
 
 import com.automation.utilities.BrowserUtils;
 import io.github.bonigarcia.wdm.WebDriverManager;
