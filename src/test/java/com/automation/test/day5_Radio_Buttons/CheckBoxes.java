@@ -34,4 +34,4 @@ public class CheckBoxes {
         BrowserUtils.wait(2);
         driver.quit();
     }
-}
+}//
