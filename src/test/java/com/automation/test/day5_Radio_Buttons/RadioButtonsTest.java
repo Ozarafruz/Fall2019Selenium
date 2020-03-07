@@ -1,12 +1,10 @@
-package com.automation.test.day7_Radio_Buttons;
+package com.automation.test.day5_Radio_Buttons;
 
 import com.automation.utilities.BrowserUtils;
 import com.automation.utilities.DriverFactory;
-import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.chrome.ChromeDriver;
 
 public class RadioButtonsTest {
 
