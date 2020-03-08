@@ -29,13 +29,16 @@ public class SelectByText {
         //and select option 1
         selectSimpleDropdown.selectByVisibleText("Option 1");
 
-        Select selectYear = new Select(driver.findElement(By.id("year")));
-        Select selectMonth = new Select(driver.findElement(By.id("month")));
         Select selectDay = new Select(driver.findElement(By.id("day")));
+        Select selectMonth = new Select(driver.findElement(By.id("month")));
+        Select selectYear = new Select(driver.findElement(By.id("year")));
 
-        selectDay.selectByVisibleText("1");
+        selectDay.selectByVisibleText("25");
+        selectYear.selectByVisibleText("2005");
         selectMonth.selectByVisibleText("February");
-        selectYear.selectByVisibleText("2003");
+
+
+        Thread.sleep(1000);
 
         //select all months one by one
         //.getOptions(); - returns all options from dropdown as List<WebElement>
@@ -48,8 +51,26 @@ public class SelectByText {
         }
 
 
+        Select stateSelect = new Select(driver.findElement(By.id("state")));
+        stateSelect.selectByVisibleText("District Of Columbia");
+
+        //option that is currently selected
+        //getFirstSelectOption() -- returns a webElement, that's why we need to call getText()
+        //getText() retrieves visible text from the webElement
+        String selected = stateSelect.getFirstSelectedOption().getText();
+
+        if (selected.equals("District Of Columbia")){
+            System.out.println("TEST PASSED");
+        }else {
+            System.out.println("TEST FAILED");
+        }
 
 
+        List<WebElement> states = stateSelect.getOptions();
+
+        for (WebElement stateOption : states) {
+            System.out.println(stateOption.getText());
+        }
 
 
 
