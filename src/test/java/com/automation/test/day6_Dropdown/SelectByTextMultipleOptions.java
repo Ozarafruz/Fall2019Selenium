@@ -36,7 +36,11 @@ public class SelectByTextMultipleOptions {
         for (WebElement selectLanguage : selectLanguages) {
             System.out.println(selectLanguage.getText());
         }
+        Thread.sleep(3000);
 
+        languageSelect.deselectByVisibleText("java");//to unselect something
+
+      //  languageSelect.deselectAll(); //this will deselect all
 
 
 
