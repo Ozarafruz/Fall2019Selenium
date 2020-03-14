@@ -29,6 +29,15 @@ public class UnitTestPractice {
         Assert.assertEquals(actual, expected);
 
     }
+    @Test
+    public void test2(){
+
+        String expected = "rac";
+        String actual = reverseString("car");
+
+        Assert.assertEquals(actual,expected);
+
+    }
 
 
 
