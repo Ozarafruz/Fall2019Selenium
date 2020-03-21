@@ -74,6 +74,43 @@ public class WebTables {
         System.out.println(BrowserUtils.getTextFromWebElements(links));
     }
 
+    /**
+     * Go to tables example page
+     * Delete record with jsmith@gmail.com email
+     * verify that number of rows is equals to 3
+     * verify that jsmith@gmail.com doesn't exists any more in the table
+     */
+    @Test
+    public void deleteRowTest() {
+        String xpath = "//table[1]//td[text()='jsmith@gmail.com']/..//a[text()='delete']";
+        driver.findElement(By.xpath(xpath)).click();
+        BrowserUtils.wait(3);
+        //get count of rows
+        int rowCount = driver.findElements(By.xpath("//table[1]//tbody//tr")).size();
+        Assert.assertEquals(rowCount, 3);
+
+        List<WebElement> emails = driver.findElements(By.xpath("//table[1]//td[text()='jsmith@gmail.com']"));
+        Assert.assertTrue(emails.isEmpty());
+
+
+}
+@Test
+    public void getColumnIndexByName(){
+        String columnName = "Email";
+
+        List<WebElement> columnNames = driver.findElements(By.xpath("//table[1]//th"));
+
+        int index = 0;
+        for (int i=0; i<columnNames.size();i++){
+            String actualColumnName = columnNames.get(i).getText();
+            if (actualColumnName.equals(columnName)){
+                index = i+1;
+                break;
+            }
+        }
+        Assert.assertEquals(index,3);
+
+}
 
 
 
