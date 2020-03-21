@@ -1,4 +1,4 @@
-package com.automation.test.day11;
+package com.automation.test.day11_JS_WebTable;
 
 import com.automation.utilities.BrowserUtils;
 import com.automation.utilities.DriverFactory;
@@ -10,8 +10,6 @@ import org.testng.Assert;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
-
-import java.util.jar.JarException;
 
 public class JSExecutor2 {
 
