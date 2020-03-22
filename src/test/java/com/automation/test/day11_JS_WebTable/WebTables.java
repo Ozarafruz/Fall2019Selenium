@@ -103,12 +103,36 @@ public class WebTables {
         int index = 0;
         for (int i=0; i<columnNames.size();i++){
             String actualColumnName = columnNames.get(i).getText();
+
+            System.out.println(String.format("Column name: %s, position %s",actualColumnName, i));//optional
+            /**
+
+              System.out.println(String.format("Column name: %s, position %s",actualColumnName, i));
+
+             * Column name: Last Name, position 0
+             * Column name: First Name, position 1
+             * Column name: Email, position 2
+             */
+
             if (actualColumnName.equals(columnName)){
                 index = i+1;
                 break;
             }
         }
         Assert.assertEquals(index,3);
+
+}
+@Test
+    public void getSpecificCell(){
+        String expected = "http://jdoe.com";
+
+        int row = 3 ;
+        int column = 5 ;
+
+        String xpath = "//table[1]//tbody//tr["+ row + "]//td[" + column + "]" ;
+        WebElement cell = driver.findElement(By.xpath(xpath));
+
+        Assert.assertEquals(cell.getText(),expected);
 
 }
 
