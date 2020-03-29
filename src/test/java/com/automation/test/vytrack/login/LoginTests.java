@@ -14,7 +14,7 @@ import org.testng.annotations.Test;
 //STATIC IMPORT OF ALL ASSERTION
 import static  org.testng.Assert.*;
 
-public class LoginPageTests {
+public class LoginTests {
 
     private WebDriver driver;
     //https is a secured version of http protocol
