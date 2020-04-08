@@ -16,8 +16,10 @@ public class NewLoginTests extends AbstractTestBase {
      */
 
 
-    @Test
-    public void verifyPageTitle(){
+
+
+    @Test(groups = "smoke")
+    public void verifyPageTitle() {
         //test --> ExtentTest object
         //we must add to every test at the beginning
         //test = report.createTest("Test name");
@@ -25,11 +27,13 @@ public class NewLoginTests extends AbstractTestBase {
 
         LoginPage loginPage = new LoginPage();
         loginPage.login();
-        //Like System.out, but it goes to report as well
+        //like system.out, but it goes to report as well
         test.info("Login as store manager");//log some steps
+        BrowserUtils.wait(2);
+        Assert.assertEquals(Driver.getDriver().getTitle(), "Dashboard");
+        //if assertion passed, it will set test status in report to passed
 
-        Assert.assertEquals(Driver.getDriver().getTitle(),"Dashboard");
-        //if assertion passed, it will set the test status in report to passed
+
         test.pass("Page title Dashboard was verified");
     }
 
