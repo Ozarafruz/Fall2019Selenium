@@ -6,7 +6,7 @@
         <!--represent extent report name  -->
         <parameter name="reportName" value="smoke"/>
         <classes>
-            <class name="com.automation.test.vytrack.login.NewLoginTests">
+            <class name="com.automation.tests.vytrack.login.NewLoginTests">
                 <methods>
                     <!-- remove loginWithDDT method from test execution list -->
                     <exclude name="loginWithDDT"/>

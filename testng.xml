@@ -3,13 +3,13 @@
     <test name="Login">
         <parameter name="reportName" value="login"/>
         <classes>
-            <class name="com.automation.test.vytrack.login.NewLoginTests"/>
+            <class name="com.automation.tests.vytrack.login.NewLoginTests"/>
         </classes>
     </test>
     <test name="Calendar events">
         <parameter name="reportName" value="Calendar events"/>
         <classes>
-            <class name="com.automation.test.vytrack.activities.NewCalendarEventsTest"/>
+            <class name="com.automation.tests.vytrack.activities.NewCalendarEventsTest"/>
         </classes>
     </test>
 </suite>
